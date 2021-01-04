@@ -7,6 +7,7 @@
 require('./bootstrap');
 import Vuetify from 'vuetify';
 import ElementUI from 'element-ui';
+import VueRouter from 'vue-router'
 import 'element-ui/lib/theme-chalk/index.css';
 
 window.Vue = require('vue');
@@ -24,6 +25,7 @@ window.Vue = require('vue');
 
 Vue.use(Vuetify);
 Vue.use(ElementUI);
+Vue.use(VueRouter);
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('product-component', require('./components/ProductComponent.vue').default);
