@@ -8,6 +8,7 @@ require('./bootstrap');
 import Vuetify from 'vuetify';
 import ElementUI from 'element-ui';
 import VueRouter from 'vue-router'
+import Vuex from 'vuex'
 import 'element-ui/lib/theme-chalk/index.css';
 
 window.Vue = require('vue');
@@ -26,9 +27,9 @@ window.Vue = require('vue');
 Vue.use(Vuetify);
 Vue.use(ElementUI);
 Vue.use(VueRouter);
+Vue.use(Vuex);
 
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
-Vue.component('product-component', require('./components/ProductComponent.vue').default);
+Vue.component('app-component', require('./components/AppComponent.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
