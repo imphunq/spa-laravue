@@ -5,14 +5,15 @@
  */
 
 require('./bootstrap');
+require('./plugins/element-ui');
 import Vuetify from 'vuetify';
-import ElementUI from 'element-ui';
 import VueRouter from 'vue-router'
 import Vuex from 'vuex'
 import 'element-ui/lib/theme-chalk/index.css';
+import { routes } from './router/routers';
+import App from './pages/App.vue';
 
 window.Vue = require('vue');
-
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -25,11 +26,14 @@ window.Vue = require('vue');
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 Vue.use(Vuetify);
-Vue.use(ElementUI);
+// Vue.use(ElementUI);
 Vue.use(VueRouter);
 Vue.use(Vuex);
 
-Vue.component('app-component', require('./components/AppComponent.vue').default);
+const router = new VueRouter({
+    routes,
+    mode: 'history',
+})
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -39,5 +43,7 @@ Vue.component('app-component', require('./components/AppComponent.vue').default)
 
 const app = new Vue({
     el: '#app',
+    router,
+    render: h => h(App),
     vuetify: new Vuetify(),
 });
