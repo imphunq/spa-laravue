@@ -9,6 +9,7 @@ import { Input } from 'element-ui';
 import { Menu } from 'element-ui';
 import { MenuItem } from 'element-ui';
 import { Submenu } from 'element-ui';
+import { Card } from 'element-ui';
 
 Vue.component('ElContainer', Container);
 Vue.component('ElButton', Button);
@@ -19,5 +20,4 @@ Vue.component('ElInput', Input);
 Vue.component('ElMenu', Menu);
 Vue.component('ElMenuItem', MenuItem);
 Vue.component('ElSubmenu', Submenu);
-
-
+Vue.component('ElCard', Card);

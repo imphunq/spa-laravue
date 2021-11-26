@@ -1,6 +1,7 @@
 import Home from '../pages/Home.vue';
 import About from '../pages/About.vue';
 import Post from '../pages/Post.vue';
+import Login from '../pages/Login.vue';
 
 export const routes = [
   {
@@ -17,5 +18,10 @@ export const routes = [
     path: '/posts',
     name: 'posts',
     component: Post,
+  },
+  {
+    path: '/login',
+    name: 'login',
+    component: Login,
   }
 ];
