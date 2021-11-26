@@ -6,23 +6,20 @@
       </span>
       <span class="flex items-center">
         <ElInput
-          v-model="keyword"
-          placeholder="Search by title"
-          suffix-icon="el-icon-search"
-          clearable
-          class="search-input mr-8"
+            v-model="keyword"
+            placeholder="Search by title"
+            suffix-icon="el-icon-search"
+            clearable
+            class="search-input mr-8"
         />
-<!--         <ul class="flex ml-8">
-          <li class="mr-4 item-menu">
-            <router-link to="/" class="text-gray-400 font-semibold">Home</router-link>
-          </li>
-          <li class="mr-4 item-menu">
-            <router-link to="/about" class="text-gray-400 font-semibold">About</router-link>
-          </li>
-        </ul> -->
-        <ElMenu :deafult-active="1" mode="horizontal">
-          <ElMenuItem index="1">Home</ElMenuItem>
-          <ElMenuItem index="2">About</ElMenuItem>
+        <ElMenu
+            :default-active="active"
+            mode="horizontal"
+            :router=true
+        >
+            <ElMenuItem index="/" route="/">Home</ElMenuItem>
+            <ElMenuItem index="/about" route="/about">About</ElMenuItem>
+            <ElMenuItem index="/login" route="/login">Login</ElMenuItem>
         </ElMenu>
       </span>
     </nav>
@@ -32,9 +29,10 @@
 <script>
   export default {
     data() {
-      return {
-        keyword: '',
-      }
+        return {
+            keyword: '',
+            active: this.$route.path,
+        }
     },
   }
 </script>
